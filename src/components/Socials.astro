@@ -8,24 +8,29 @@ type Props = {
 type SocialItem = {
 	href: string;
 	icon: string;
+	name: string;
 };
 
 const socials: SocialItem[] = [
 	{
 		href: 'https://github.com/raymondkneipp',
 		icon: 'github',
+		name: 'My GitHub Account',
 	},
 	{
 		href: 'https://www.linkedin.com/in/raymondkneipp/',
 		icon: 'linkedin',
+		name: 'My LinkedIn Profile',
 	},
 	{
 		href: 'https://twitter.com/rfkquery',
 		icon: 'twitter',
+		name: 'Twitter @rfkquery',
 	},
 	{
 		href: 'mailto:hello@raymondkneipp.com',
 		icon: 'envelope',
+		name: 'Email me',
 	},
 ];
 
@@ -36,10 +41,13 @@ const { borderSide = 'right' } = Astro.props;
 	{
 		socials.map((item) => (
 			<a
+				target="_blank"
+				rel="noopener noreferrer"
 				href={item.href}
 				class={`p-3 sm:p-6 md:p-12 border-stone-800 hover:text-amber-400 transition ${
 					borderSide === 'right' ? 'border-r' : 'border-l'
 				}`}
+				aria-label={item.name}
 			>
 				<Icon
 					pack="mdi"
