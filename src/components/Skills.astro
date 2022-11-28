@@ -71,10 +71,7 @@ const skills: Skill[] = [
 			{
 				skills.map((item) => (
 					<li class="flex gap-3 items-center text-stone-100">
-						<Icon
-							name={item.icon}
-							class="h-6 w-6 sm:h-7 sm:w-7 md:w-8 md:h-8"
-						/>
+						<Icon name={item.icon} class="h-6 w-6" />
 						{item.name}
 					</li>
 				))
