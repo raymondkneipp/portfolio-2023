@@ -12,27 +12,27 @@ const socials: SocialItem[] = [
 	{
 		href: 'https://github.com/raymondkneipp',
 		icon: 'github',
-		name: 'My GitHub Account',
+		name: 'GitHub',
 	},
 	{
 		href: 'https://www.linkedin.com/in/raymondkneipp/',
 		icon: 'linkedin',
-		name: 'My LinkedIn Profile',
+		name: 'LinkedIn',
 	},
 	{
 		href: 'https://twitter.com/rfkquery',
 		icon: 'twitter',
-		name: 'Twitter @rfkquery',
+		name: 'Twitter',
 	},
 	{
 		href: 'mailto:hello@raymondkneipp.com',
 		icon: 'envelope',
-		name: 'Email me',
+		name: 'Email',
 	},
 	{
 		href: 'https://raymondkneipp.com/resume-not-found.pdf',
 		icon: 'file-pdf-box',
-		name: 'View my resume',
+		name: 'Resume',
 	},
 ];
 ---
@@ -53,6 +53,7 @@ const socials: SocialItem[] = [
 						name={item.icon}
 						class="h-6 w-6 sm:h-7 sm:w-7 md:w-8 md:h-8"
 					/>
+					<span class="ml-3 hidden lg:block">{item.name}</span>
 				</a>
 			))
 		}
