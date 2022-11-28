@@ -4,11 +4,10 @@ import Logo from './Logo.astro';
 import Socials from './Socials.astro';
 ---
 
-<GridCard padding={false}>
-	<footer class="flex items-start justify-between">
-		<span class="p-3 sm:p-6 md:p-12">
-			<Logo />
-		</span>
-		<Socials borderSide="left" />
+<Socials />
+
+<GridCard>
+	<footer class="flex justify-center items-center">
+		<Logo />
 	</footer>
 </GridCard>
