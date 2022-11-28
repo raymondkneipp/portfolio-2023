@@ -67,11 +67,14 @@ const skills: Skill[] = [
 			officiis quasi unde ducimus eum aut consectetur, ipsa eveniet officia eos
 			dolor. Doloribus earum asperiores facere vel similique reiciendis quis.
 		</p>
-		<ul class="grid grid-cols-4 gap-6">
+		<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
 			{
 				skills.map((item) => (
 					<li class="flex gap-3 items-center text-stone-100">
-						<Icon name={item.icon} class="h-8 w-8" />
+						<Icon
+							name={item.icon}
+							class="h-6 w-6 sm:h-7 sm:w-7 md:w-8 md:h-8"
+						/>
 						{item.name}
 					</li>
 				))

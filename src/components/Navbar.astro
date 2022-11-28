@@ -13,10 +13,6 @@ const routes: Route[] = [
 		href: '/',
 	},
 	{
-		name: 'Projects',
-		href: '/projects',
-	},
-	{
 		name: 'Blog',
 		href: '/blog',
 	},
@@ -31,7 +27,7 @@ const routes: Route[] = [
 	<nav class="flex items-center justify-between">
 		<Logo />
 
-		<ul class="flex items-center gap-12">
+		<ul class="flex items-center gap-3 sm:gap-6 md:gap-12">
 			{
 				routes.map((route) => (
 					<li>

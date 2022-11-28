@@ -3,8 +3,8 @@ import GridCard from './GridCard.astro';
 ---
 
 <GridCard padding={false}>
-	<div class="flex flex-col gap-0">
-		<div class="flex flex-col gap-3 p-12">
+	<div class="flex flex-col">
+		<div class="flex flex-col gap-6 p-3 sm:p-6 md:p-12">
 			<h2 class="font-bold text-2xl font-sans">Projects</h2>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nam,
@@ -12,12 +12,12 @@ import GridCard from './GridCard.astro';
 				vel in quidem molestias. Est cum aut sunt dolores a?
 			</p>
 		</div>
-		<div class="grid grid-cols-2">
+		<div class="grid sm:grid-cols-2">
 			{
 				Array(4)
 					.fill('')
 					.map((item) => (
-						<article class="flex flex-col gap-3 p-12 border-t odd:border-r border-stone-800">
+						<article class="flex flex-col gap-3 p-3 sm:p-6 md:p-12 border-t sm:odd:border-r border-stone-800">
 							<header class="flex flex-col gap-3">
 								<div class="bg-stone-800 w-full aspect-video" />
 								<h3 class="font-bold text-lg font-sans">Project 1</h3>

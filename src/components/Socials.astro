@@ -33,9 +33,13 @@ const socials: SocialItem[] = [
 			socials.map((item) => (
 				<a
 					href={item.href}
-					class="p-12 h-32 w-32 border-r border-stone-800 hover:text-amber-400 transition"
+					class="p-3 sm:p-6 md:p-12 border-r border-stone-800 hover:text-amber-400 transition"
 				>
-					<Icon pack="mdi" name={item.icon} />
+					<Icon
+						pack="mdi"
+						name={item.icon}
+						class="h-6 w-6 sm:h-7 sm:w-7 md:w-8 md:h-8"
+					/>
 				</a>
 			))
 		}
