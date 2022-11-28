@@ -1,0 +1,81 @@
+---
+import Icon from 'astro-icon';
+import GridCard from './GridCard.astro';
+
+type Skill = {
+	icon: string;
+	name: string;
+};
+
+const skills: Skill[] = [
+	{
+		icon: 'mdi:language-html5',
+		name: 'HTML',
+	},
+	{
+		icon: 'mdi:language-css3',
+		name: 'CSS',
+	},
+	{
+		icon: 'mdi:language-javascript',
+		name: 'JavaScript',
+	},
+	{
+		icon: 'mdi:nodejs',
+		name: 'Node.js',
+	},
+	{
+		icon: 'mdi:sass',
+		name: 'SASS',
+	},
+	{
+		icon: 'mdi:react',
+		name: 'React',
+	},
+	{
+		icon: 'mdi:git',
+		name: 'Git',
+	},
+	{
+		icon: 'mdi:github',
+		name: 'GitHub',
+	},
+	{
+		icon: 'mdi:tailwind',
+		name: 'Tailwind CSS',
+	},
+	{
+		icon: 'mdi:language-typescript',
+		name: 'TypeScript',
+	},
+	{
+		icon: 'file-icons:nextjs',
+		name: 'Next.js',
+	},
+	{
+		icon: 'simple-icons:prisma',
+		name: 'Prisma',
+	},
+];
+---
+
+<GridCard>
+	<div class="flex flex-col gap-6">
+		<h2 class="font-bold text-2xl font-sans">Skills</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam esse
+			officiis quasi unde ducimus eum aut consectetur, ipsa eveniet officia eos
+			dolor. Doloribus earum asperiores facere vel similique reiciendis quis.
+		</p>
+		<ul class="grid grid-cols-4 gap-6">
+			{
+				skills.map((item) => (
+					<li class="flex gap-3 items-center text-stone-100">
+						<Icon name={item.icon} class="h-8 w-8" />
+						{item.name}
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</GridCard>

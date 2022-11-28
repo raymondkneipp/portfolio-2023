@@ -1,0 +1,44 @@
+---
+import GridCard from './GridCard.astro';
+import Logo from './Logo.astro';
+
+type Route = {
+	name: string;
+	href: string;
+};
+
+const routes: Route[] = [
+	{
+		name: 'Home',
+		href: '/',
+	},
+	{
+		name: 'Projects',
+		href: '/projects',
+	},
+	{
+		name: 'Blog',
+		href: '/blog',
+	},
+	{
+		name: 'Contact',
+		href: '/contact',
+	},
+];
+---
+
+<GridCard>
+	<nav class="flex items-center justify-between">
+		<Logo />
+
+		<ul class="flex items-center gap-12">
+			{
+				routes.map((route) => (
+					<li>
+						<a href={route.href}>{route.name}</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</GridCard>

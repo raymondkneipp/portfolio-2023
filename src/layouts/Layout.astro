@@ -1,0 +1,65 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import '@fontsource/jost';
+import '@fontsource/merriweather';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-stone-900 text-stone-100 font-sans;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-sans text-stone-100;
+	}
+
+	p {
+		@apply text-stone-400 font-sans;
+	}
+
+	/* Custom Scrollbar */
+	::-webkit-scrollbar {
+		@apply w-2;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		@apply bg-stone-900;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		@apply bg-amber-400;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-amber-300;
+	}
+</style>

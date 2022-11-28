@@ -1,0 +1,27 @@
+---
+import GridCard from './GridCard.astro';
+---
+
+<GridCard padding={false}>
+	<main class="flex gap-12 items-center">
+		<div class="flex flex-col gap-12 items-start flex-1 p-12">
+			<h1 class="flex flex-col font-bold text-5xl">
+				<span>Hi there, I'm Raymond.</span>
+				<span>Full Stack <span class="text-amber-400">Developer</span></span>
+				<span>and United States Marine.</span>
+			</h1>
+			<a
+				href="/"
+				class="border py-3 px-6 border-amber-400 text-amber-400 hover:bg-amber-400/10 transition"
+			>
+				Contact Me</a
+			>
+		</div>
+		<img
+			src="/me.png"
+			width="400px"
+			height="550px"
+			class="object-contain object-bottom p-12 pb-0 sepia brightness-75 hover:sepia-0 hover:brightness-100 transition-all transform hover:scale-105 origin-bottom ease-out"
+		/>
+	</main>
+</GridCard>

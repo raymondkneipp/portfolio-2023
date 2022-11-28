@@ -1,0 +1,39 @@
+---
+import GridCard from './GridCard.astro';
+---
+
+<GridCard padding={false}>
+	<div class="flex flex-col gap-0">
+		<div class="flex flex-col gap-3 p-12">
+			<h2 class="font-bold text-2xl font-sans">Projects</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nam,
+				adipisci vitae nemo nisi deleniti non reprehenderit harum sed, possimus
+				vel in quidem molestias. Est cum aut sunt dolores a?
+			</p>
+		</div>
+		<div class="grid grid-cols-2">
+			{
+				Array(4)
+					.fill('')
+					.map((item) => (
+						<article class="flex flex-col gap-3 p-12 border-t odd:border-r border-stone-800">
+							<header class="flex flex-col gap-3">
+								<div class="bg-stone-800 w-full aspect-video" />
+								<h3 class="font-bold text-lg font-sans">Project 1</h3>
+							</header>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+								nam, adipisci vitae nemo nisi deleniti non reprehenderit harum
+								sed, possimus vel in quidem molestias. Est cum aut sunt dolores
+								a?
+							</p>
+							<a href="/" class="text-amber-400">
+								View Project
+							</a>
+						</article>
+					))
+			}
+		</div>
+	</div>
+</GridCard>

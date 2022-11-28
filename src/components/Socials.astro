@@ -1,0 +1,43 @@
+---
+import Icon from 'astro-icon';
+import GridCard from './GridCard.astro';
+
+type SocialItem = {
+	href: string;
+	icon: string;
+};
+
+const socials: SocialItem[] = [
+	{
+		href: '/',
+		icon: 'github',
+	},
+	{
+		href: '/',
+		icon: 'linkedin',
+	},
+	{
+		href: '/',
+		icon: 'twitter',
+	},
+	{
+		href: '/',
+		icon: 'envelope',
+	},
+];
+---
+
+<GridCard padding={false}>
+	<div class="flex items-center">
+		{
+			socials.map((item) => (
+				<a
+					href={item.href}
+					class="p-12 h-32 w-32 border-r border-stone-800 hover:text-amber-400 transition"
+				>
+					<Icon pack="mdi" name={item.icon} />
+				</a>
+			))
+		}
+	</div>
+</GridCard>
