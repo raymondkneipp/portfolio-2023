@@ -1,4 +1,5 @@
 ---
+import { Img } from 'astro-imagetools/components';
 import GridCard from './GridCard.astro';
 ---
 
@@ -22,12 +23,16 @@ import GridCard from './GridCard.astro';
 			>
 		</div>
 
-		<img
-			src="/me.png"
-			alt="Photo of Raymond Kneipp"
-			width="400px"
-			height="550px"
-			class="object-contain object-bottom p-3 sm:p-6 md:p-12 pb-0 sm:pb-0 md:pb-0 sepia brightness-75 transition-all transform origin-bottom absolute bottom-0 right-0 top-0 w-min h-full z-0 opacity-30 sm:opacity-100"
-		/>
+		<div
+			class="p-3 sm:p-6 md:p-12 pb-0 sm:pb-0 md:pb-0 sepia brightness-75 transition-all absolute bottom-0 right-0 top-0 z-0 opacity-30 sm:opacity-100"
+		>
+			<Img
+				src="/me.png"
+				alt="Photo of Raymond Kneipp"
+				layout="fill"
+				placeholder="none"
+				objectFit="contain"
+			/>
+		</div>
 	</main>
 </GridCard>
