@@ -7,7 +7,15 @@ import GridCard from './GridCard.astro';
 <GridCard padding={false}>
 	<main
 		class="flex gap-3 sm:gap-6 md:gap-12 items-center flex-row relative min-h-[400px] sm:min-h-[400px] md:min-h-[500px]"
+		style="background-size: 4rem 10%;
+		background-image:
+			linear-gradient(to right, #292524 1px, transparent 1px),
+			linear-gradient(to bottom, #292524 1px, transparent 1px); background-position: 100% 0;"
 	>
+		<div
+			class="absolute bg-gradient-to-r from-stone-900 via-stone-900 to-stone-900 sm:to-transparent top-0 right-0 bottom-0 left-0 z-0"
+		>
+		</div>
 		<div
 			class="flex flex-col gap-3 sm:gap-6 md:gap-12 items-start flex-1 p-3 sm:p-6 md:p-12 z-50"
 		>
@@ -31,7 +39,7 @@ import GridCard from './GridCard.astro';
 			width={437}
 			height={600}
 			fit="contain"
-			class="absolute top-0 right-0 bottom-0 h-full w-min p-3 sm:p-6 md:p-12 pb-0 sm:pb-0 md:pb-0 sepia brightness-75 opacity-30 sm:opacity-100"
+			class="absolute top-0 right-0 bottom-0 h-full w-min p-3 sm:p-6 md:p-12 pb-0 sm:pb-0 md:pb-0 sepia brightness-75 opacity-30 sm:opacity-100 z-0"
 		/>
 	</main>
 </GridCard>
