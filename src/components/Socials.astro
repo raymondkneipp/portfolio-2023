@@ -1,6 +1,9 @@
 ---
 import Icon from 'astro-icon';
-import GridCard from './GridCard.astro';
+
+type Props = {
+	borderSide?: 'right' | 'left';
+};
 
 type SocialItem = {
 	href: string;
@@ -25,23 +28,25 @@ const socials: SocialItem[] = [
 		icon: 'envelope',
 	},
 ];
+
+const { borderSide = 'right' } = Astro.props;
 ---
 
-<GridCard padding={false}>
-	<div class="flex items-center">
-		{
-			socials.map((item) => (
-				<a
-					href={item.href}
-					class="p-3 sm:p-6 md:p-12 border-r border-stone-800 hover:text-amber-400 transition"
-				>
-					<Icon
-						pack="mdi"
-						name={item.icon}
-						class="h-6 w-6 sm:h-7 sm:w-7 md:w-8 md:h-8"
-					/>
-				</a>
-			))
-		}
-	</div>
-</GridCard>
+<div class="flex items-center">
+	{
+		socials.map((item) => (
+			<a
+				href={item.href}
+				class={`p-3 sm:p-6 md:p-12 border-stone-800 hover:text-amber-400 transition ${
+					borderSide === 'right' ? 'border-r' : 'border-l'
+				}`}
+			>
+				<Icon
+					pack="mdi"
+					name={item.icon}
+					class="h-6 w-6 sm:h-7 sm:w-7 md:w-8 md:h-8"
+				/>
+			</a>
+		))
+	}
+</div>
