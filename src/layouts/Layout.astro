@@ -5,7 +5,6 @@ export interface Props {
 
 const { title } = Astro.props;
 import '@fontsource/jost';
-import '@fontsource/merriweather';
 ---
 
 <!DOCTYPE html>
@@ -36,11 +35,11 @@ import '@fontsource/merriweather';
 	h4,
 	h5,
 	h6 {
-		@apply font-sans text-stone-100;
+		@apply text-stone-100;
 	}
 
 	p {
-		@apply text-stone-400 font-sans;
+		@apply text-stone-400;
 	}
 
 	/* Custom Scrollbar */

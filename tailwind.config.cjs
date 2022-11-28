@@ -7,7 +7,6 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['Jost', ...defaultTheme.fontFamily.sans],
-				serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
 			},
 		},
 	},
