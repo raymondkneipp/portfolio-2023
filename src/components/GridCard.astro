@@ -1,12 +1,13 @@
 ---
 export interface Props {
 	padding?: boolean;
+	id?: string;
 }
 
-const { padding = true } = Astro.props;
+const { padding = true, id } = Astro.props;
 ---
 
-<div class="border-b border-stone-800 last-of-type:border-b-0">
+<div class="border-b border-stone-800 last-of-type:border-b-0" id={id}>
 	<div class="container mx-auto">
 		<div
 			class={`border-x border-stone-800 mx-3 sm:mx-6 md:mx-12 ${
