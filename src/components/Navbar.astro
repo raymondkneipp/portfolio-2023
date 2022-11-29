@@ -2,32 +2,32 @@
 import GridCard from './GridCard.astro';
 import Logo from './Logo.astro';
 
-type Route = {
-	name: string;
-	href: string;
-};
+// type Route = {
+// 	name: string;
+// 	href: string;
+// };
 
-const routes: Route[] = [
-	{
-		name: 'Home',
-		href: '/',
-	},
-	{
-		name: 'Blog',
-		href: '/blog',
-	},
-	{
-		name: 'Contact',
-		href: '/contact',
-	},
-];
+// const routes: Route[] = [
+// 	{
+// 		name: 'Home',
+// 		href: '/',
+// 	},
+// 	{
+// 		name: 'Blog',
+// 		href: '/blog',
+// 	},
+// 	{
+// 		name: 'Contact',
+// 		href: '/contact',
+// 	},
+// ];
 ---
 
 <GridCard>
 	<nav class="flex items-center justify-between">
 		<Logo />
 
-		<ul class="flex items-center gap-3 sm:gap-6 md:gap-12">
+		<!-- <ul class="flex items-center gap-3 sm:gap-6 md:gap-12">
 			{
 				routes.map((route) => (
 					<li>
@@ -35,6 +35,6 @@ const routes: Route[] = [
 					</li>
 				))
 			}
-		</ul>
+		</ul> -->
 	</nav>
 </GridCard>
