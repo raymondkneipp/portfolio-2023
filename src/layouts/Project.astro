@@ -1,9 +1,30 @@
 ---
+import GridCard from '../components/GridCard.astro';
+import ProjectsList from '../components/ProjectsList.astro';
 import Layout from './Layout.astro';
 
 const { content } = Astro.props;
+
+const projects = await Astro.glob('../pages/projects/*.mdx');
+
+const filteredProjects = projects.filter(
+	(project) => !project.frontmatter.draft
+);
+
+const index = filteredProjects.findIndex(
+	(project) => project.url === content.url
+);
+
+const prev = index - 1 < 0 ? filteredProjects.length - 1 : index - 1;
+const next = index + 1 > filteredProjects.length - 1 ? 0 : index + 1;
+
+const otherProjects = [filteredProjects[next], filteredProjects[prev]];
 ---
 
 <Layout title={`Project: ${content.title} by Raymond Kneipp`}>
 	<slot />
+	<GridCard padding={false}>
+		<h2 class="p-3 sm:p-6 md:p-12">Other Projects</h2>
+		<ProjectsList projects={otherProjects} />
+	</GridCard>
 </Layout>

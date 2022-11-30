@@ -1,6 +1,6 @@
 ---
-import { Image } from '@astrojs/image/components';
 import GridCard from './GridCard.astro';
+import ProjectsList from './ProjectsList.astro';
 
 interface Frontmatter {
 	title: string;
@@ -26,37 +26,6 @@ const filteredProjects = projects.filter(
 				capabilities.
 			</p>
 		</div>
-		<div class="grid sm:grid-cols-2">
-			{
-				filteredProjects.map((project) => (
-					<a
-						href={project.url}
-						class="flex flex-col gap-3 p-3 sm:p-6 md:p-12 border-t sm:odd:border-r border-stone-800 relative group focus-visible:ring-0"
-					>
-						<div class="absolute bg-amber-400 h-px w-0 top-0 left-1/2 group-hover:w-[calc(100%+3rem)] group-hover:-left-6 transition-all group-focus-visible:w-[calc(100%+3rem)] group-focus-visible:-left-6" />
-						<div class="absolute bg-amber-400 h-px w-0 bottom-0 left-1/2 group-hover:w-[calc(100%+3rem)] group-hover:-left-6 transition-all group-focus-visible:w-[calc(100%+3rem)] group-focus-visible:-left-6" />
-						<div class="absolute bg-amber-400 w-px h-0 right-0 top-1/2 group-hover:h-[calc(100%+3rem)] group-hover:-top-6 transition-all group-focus-visible:h-[calc(100%+3rem)] group-focus-visible:-top-6" />
-						<div class="absolute bg-amber-400 w-px h-0 left-0 top-1/2 group-hover:h-[calc(100%+3rem)] group-hover:-top-6 transition-all group-focus-visible:h-[calc(100%+3rem)] group-focus-visible:-top-6" />
-
-						<header class="flex flex-col gap-3">
-							<Image
-								src={project.frontmatter.image}
-								alt="Photo of Raymond Kneipp"
-								width="650px"
-								aspectRatio="16:9"
-								fit="contain"
-								layout="fill"
-								class="w-full"
-							/>
-							<h3 class="font-bold text-xl font-sans">
-								{project.frontmatter.title}
-							</h3>
-						</header>
-						<p>{project.frontmatter.description}</p>
-						<span class="text-amber-400">View Project</span>
-					</a>
-				))
-			}
-		</div>
+		<ProjectsList projects={filteredProjects} />
 	</div>
 </GridCard>
