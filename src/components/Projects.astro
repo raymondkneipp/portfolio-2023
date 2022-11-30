@@ -29,7 +29,15 @@ const filteredProjects = projects.filter(
 		<div class="grid sm:grid-cols-2">
 			{
 				filteredProjects.map((project) => (
-					<article class="flex flex-col gap-3 p-3 sm:p-6 md:p-12 border-t sm:odd:border-r border-stone-800">
+					<a
+						href={project.url}
+						class="flex flex-col gap-3 p-3 sm:p-6 md:p-12 border-t sm:odd:border-r border-stone-800 relative group"
+					>
+						<div class="absolute bg-amber-400 h-px w-0 top-0 left-1/2 group-hover:w-[calc(100%+3rem)] group-hover:-left-6 transition-all" />
+						<div class="absolute bg-amber-400 h-px w-0 bottom-0 left-1/2 group-hover:w-[calc(100%+3rem)] group-hover:-left-6 transition-all" />
+						<div class="absolute bg-amber-400 w-px h-0 right-0 top-1/2 group-hover:h-[calc(100%+3rem)] group-hover:-top-6 transition-all" />
+						<div class="absolute bg-amber-400 w-px h-0 left-0 top-1/2 group-hover:h-[calc(100%+3rem)] group-hover:-top-6 transition-all" />
+
 						<header class="flex flex-col gap-3">
 							<Image
 								src={project.frontmatter.image}
@@ -45,10 +53,8 @@ const filteredProjects = projects.filter(
 							</h3>
 						</header>
 						<p>{project.frontmatter.description}</p>
-						<a href={project.url} class="text-amber-400">
-							View Project
-						</a>
-					</article>
+						<span class="text-amber-400">View Project</span>
+					</a>
 				))
 			}
 		</div>
