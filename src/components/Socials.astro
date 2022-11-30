@@ -45,13 +45,13 @@ const socials: SocialItem[] = [
 					target="_blank"
 					rel="noopener noreferrer"
 					href={item.href}
-					class="relative group p-3 sm:p-6 md:p-12 border-stone-800 border-r last-of-type:border-r-0 hover:text-amber-400 transition flex-1 flex items-center justify-center"
+					class="relative group p-3 sm:p-6 md:p-12 border-stone-800 border-r last-of-type:border-r-0 hover:text-amber-400 focus-visible:text-amber-400 transition flex-1 flex items-center justify-center focus-visible:ring-0 text-stone-100"
 					aria-label={item.name}
 				>
-					<div class="absolute bg-amber-400 h-px w-0 top-0 left-1/2 group-hover:w-[calc(100%+3rem)] group-hover:-left-6 transition-all" />
-					<div class="absolute bg-amber-400 h-px w-0 bottom-0 left-1/2 group-hover:w-[calc(100%+3rem)] group-hover:-left-6 transition-all" />
-					<div class="absolute bg-amber-400 w-px h-0 right-0 top-1/2 group-hover:h-[calc(100%+3rem)] group-hover:-top-6 transition-all" />
-					<div class="absolute bg-amber-400 w-px h-0 left-0 top-1/2 group-hover:h-[calc(100%+3rem)] group-hover:-top-6 transition-all" />
+					<div class="absolute bg-amber-400 h-px w-0 top-0 left-1/2 group-hover:w-[calc(100%+3rem)] group-hover:-left-6 transition-all group-focus-visible:w-[calc(100%+3rem)] group-focus-visible:-left-6" />
+					<div class="absolute bg-amber-400 h-px w-0 bottom-0 left-1/2 group-hover:w-[calc(100%+3rem)] group-hover:-left-6 transition-all group-focus-visible:w-[calc(100%+3rem)] group-focus-visible:-left-6" />
+					<div class="absolute bg-amber-400 w-px h-0 right-0 top-1/2 group-hover:h-[calc(100%+3rem)] group-hover:-top-6 transition-all group-focus-visible:h-[calc(100%+3rem)] group-focus-visible:-top-6" />
+					<div class="absolute bg-amber-400 w-px h-0 left-0 top-1/2 group-hover:h-[calc(100%+3rem)] group-hover:-top-6 transition-all group-focus-visible:h-[calc(100%+3rem)] group-focus-visible:-top-6" />
 
 					<Icon
 						pack="mdi"

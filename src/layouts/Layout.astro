@@ -59,6 +59,10 @@ import Navbar from '../components/Navbar.astro';
 		@apply list-inside list-disc flex gap-3 flex-col;
 	}
 
+	a {
+		@apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-400 text-amber-400;
+	}
+
 	/* Custom Scrollbar */
 	::-webkit-scrollbar {
 		@apply w-2;
