@@ -1,0 +1,9 @@
+---
+import Layout from './Layout.astro';
+
+const { content } = Astro.props;
+---
+
+<Layout title={`Project: ${content.title} by Raymond Kneipp`}>
+	<slot />
+</Layout>

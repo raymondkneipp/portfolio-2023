@@ -5,6 +5,8 @@ export interface Props {
 
 const { title } = Astro.props;
 import '@fontsource/jost';
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <!DOCTYPE html>
@@ -18,7 +20,9 @@ import '@fontsource/jost';
 		<title>{title}</title>
 	</head>
 	<body>
+		<Navbar />
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>
@@ -28,6 +32,14 @@ import '@fontsource/jost';
 
 	body {
 		@apply bg-stone-900 text-stone-100 font-sans;
+	}
+
+	h1 {
+		@apply font-bold text-2xl sm:text-4xl lg:text-5xl;
+	}
+
+	h2 {
+		@apply font-bold text-3xl font-sans;
 	}
 
 	h1,
@@ -41,6 +53,10 @@ import '@fontsource/jost';
 
 	p {
 		@apply text-stone-400;
+	}
+
+	ul {
+		@apply list-inside list-disc flex gap-3 flex-col;
 	}
 
 	/* Custom Scrollbar */

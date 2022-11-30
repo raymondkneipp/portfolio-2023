@@ -1,11 +1,25 @@
 ---
+import { Image } from '@astrojs/image/components';
 import GridCard from './GridCard.astro';
+
+interface Frontmatter {
+	title: string;
+	description: string;
+	image: string;
+	draft?: boolean;
+}
+
+const projects = await Astro.glob<Frontmatter>('../pages/projects/*.mdx');
+
+const filteredProjects = projects.filter(
+	(project) => !project.frontmatter.draft
+);
 ---
 
 <GridCard padding={false}>
 	<div class="flex flex-col">
 		<div class="flex flex-col gap-6 p-3 sm:p-6 md:p-12">
-			<h2 class="font-bold text-2xl font-sans">Projects</h2>
+			<h2>Projects</h2>
 			<p class="max-w-screen-md">
 				I enjoy keeping busy and continuously have a project in the works. A
 				project that is above my comfort level and pushes me beyond my current
@@ -14,25 +28,28 @@ import GridCard from './GridCard.astro';
 		</div>
 		<div class="grid sm:grid-cols-2">
 			{
-				Array(4)
-					.fill('')
-					.map((item) => (
-						<article class="flex flex-col gap-3 p-3 sm:p-6 md:p-12 border-t sm:odd:border-r border-stone-800">
-							<header class="flex flex-col gap-3">
-								<div class="bg-stone-800 w-full aspect-video" />
-								<h3 class="font-bold text-lg font-sans">Project 1</h3>
-							</header>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-								nam, adipisci vitae nemo nisi deleniti non reprehenderit harum
-								sed, possimus vel in quidem molestias. Est cum aut sunt dolores
-								a?
-							</p>
-							<a href="/" class="text-amber-400">
-								View Project
-							</a>
-						</article>
-					))
+				filteredProjects.map((project) => (
+					<article class="flex flex-col gap-3 p-3 sm:p-6 md:p-12 border-t sm:odd:border-r border-stone-800">
+						<header class="flex flex-col gap-3">
+							<Image
+								src={project.frontmatter.image}
+								alt="Photo of Raymond Kneipp"
+								width="650px"
+								aspectRatio="16:9"
+								fit="contain"
+								layout="fill"
+								class="w-full"
+							/>
+							<h3 class="font-bold text-xl font-sans">
+								{project.frontmatter.title}
+							</h3>
+						</header>
+						<p>{project.frontmatter.description}</p>
+						<a href={project.url} class="text-amber-400">
+							View Project
+						</a>
+					</article>
+				))
 			}
 		</div>
 	</div>

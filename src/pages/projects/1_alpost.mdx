@@ -1,0 +1,117 @@
+---
+layout: ../../layouts/Project.astro
+title: Alpost
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ipsam atque accusantium facere vel est nulla pariatur non veritatis eveniet excepturi consectetur repellendus. Praesentium, temporibus debitis eius animi corrupti quae!
+image: /images/alpost/homepage.png
+---
+
+import GridCard from '../../components/GridCard.astro';
+import { Image } from '@astrojs/image/components';
+
+<GridCard>
+
+# Alpost
+
+ALPost is a webiste builder for american legion posts. I designed and built this project from scratch.
+
+## Core Functionalities & Interesting Features
+
+- Admin Dashboard for clients to manage website and process applications.
+- Custom built CMS for clients to manage website
+- Multitenancy to allow multiple users to site
+- Payment processing using Stripe
+- Handles applications for new members, renewing members, and transfer members
+- Allows users to post news reguarding legion
+- Supports creation of events to list on website
+- Share legion information, social media networks for legion, lists officers, lists FAQs
+- Lists contact methods and offers a form for visitors to easily reach legion
+
+## Technologies Used
+
+- Next Auth
+- React Hook Form
+- Prisma
+- Stripe
+- tRPC
+- Next.js
+- React
+- Tailwind CSS
+- TypeScript
+- Vercel
+
+[Live Site](https://alpost.org/)
+
+[Source Code](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+<Image
+	src="/images/alpost/homepage.png"
+	alt="Photo of Raymond Kneipp"
+	width="1200px"
+	aspectRatio="16:9"
+	fit="contain"
+	layout="fill"
+	class="w-full"
+/>
+
+</GridCard>
+
+<GridCard>
+
+## Purpose and Goal
+
+I had recently returned home from a deployment in Jordan & Bahrain and I wanted to start a web design agency. I wrote up a business plan, sales / operations process, website questionnaire, client management datasheet, cold email and cold call scripts, pricing sheets, and an agreement form.
+
+A friend of mine who majored in business marketing and myself met up every Tuesday evening for a few hours to discuss the plan and make calls to prospects. I came across a local business directory for the town I grew up in and began adding their information to the client management sheet.
+
+I opened the link to the local American Legion Post and to no suprise, it looked aged. In the footer of the page I found a link to the service they were using to create the webpage. I explored other legion websites and found they were using the same service.
+
+I tried out their demo and was astonished by how unintuitive the experience was. I knew I could create something better. Something more modern and easy to use.
+
+I proceded to spend months learning and building out small demos to confirm that I could build something like this.
+
+### Plan A
+
+My first though was I could create a template and duplicate the codebase everytime I found a legion that wanted a new website. After building the template I realized that this approach would not be sustainable. I would have to clone the repo, change the copy, setup new environment variables, push the code to a hosting platform, buy a domain, configure the DNS, setup a CMS, etc.
+
+### Plan B
+
+I wanted a way to automate everything said above. I opened up my podcast player and saw a podcast labeled ["Potluck - Multi Tenant Apps, JS Sprinkles, Kids Coding, Server Error Handling"](https://syntax.fm/show/448/potluck-multi-tenant-apps-js-sprinkles-kids-coding-server-error-handling) by Syntax. I imedietly knew that this is what I needed.
+
+I began working on a [repo to showcase basic multi-tenant architecture](https://github.com/raymondkneipp/multi-tenant-via-subdomain) and hosted it on a digital ocean droplet. I installed caddy server to handle SSL certs and handle wildcard domains. At the time, I was using only react so all the pages were rendered on the client and that was going to be no good for performance and SEO.
+
+### Plan C
+
+Thank goodness for [Vercel's Platform Starter Kit](https://vercel.com/guides/nextjs-multi-tenant-application). The only problem was I have never used Prisma, PlanetScale, or NextAuth.js, and the codebase was honestly intimidating. Rather than forking the repo and conforming it for my needs and just relying on the magic to make it work, I wanted to figure out what made it worked. I went through every file and figured out what everything was responsible for and took the code I needed and used it in my project.
+
+</GridCard>
+
+<GridCard>
+
+## Spotlight
+
+- What is the "killer feature" of your project? What feature does it have that took the most work or was the most technically impressive? Some possible examples:
+  - User authentication
+  - A feed of items fetched from a database
+  - A particularly tricky UI element (eg. autocomplete, calendar, drag-and-drop)
+  - Anything you are proud of!
+
+I created the logo!
+
+- What were the technical hurdles that got in your way? Any major problems you hit during development?
+- How did you solve those problems? What was the solution? Go deep here, and write with a developer in mind.
+
+</GridCard>
+
+<GridCard>
+
+## Lessons Learned
+
+Plan A never works. I did learn a bit about Next.js middleware. This is the crucial piece of code that lets this app work. Using middleware I am able to rewrite the url based on the domain to route to a specific website.
+
+As I was building this app I stumbled upon the [t3 stack](https://create.t3.gg) and I used it to build out the admin dashboard and CMS. I've never had a more satisfiing developer experience.
+
+According to the US Department of Veterans Affairs, about 130,428 US veterans are legally blind, and around one million veterans have low vision. Although I am not an accessibility expert, I did do my dudiligence to be as accomidating as possible. I incorporated a light and dark theme to accomidate users with low vision and light sensitivity and used proper contrast. I utilized HeadlessUI to create keyboard accessible navigation menus.
+
+Working on ALPost has taught me the concept of multitenantcy. I have future plans to use this technique in future projects.
+
+</GridCard>
