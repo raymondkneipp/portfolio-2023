@@ -2,9 +2,10 @@
 export interface Props {
 	padding?: boolean;
 	id?: string;
+	spacing?: boolean;
 }
 
-const { padding = true, id } = Astro.props;
+const { padding = true, id, spacing = false } = Astro.props;
 ---
 
 <div class="border-b border-stone-800 last-of-type:border-b-0" id={id}>
@@ -12,7 +13,7 @@ const { padding = true, id } = Astro.props;
 		<div
 			class={`border-x border-stone-800 mx-3 sm:mx-6 md:mx-12 ${
 				padding ? 'p-3 sm:p-6 md:p-12' : ''
-			}`}
+			} ${spacing ? 'flex flex-col gap-6 items-start' : ''}`}
 		>
 			<slot />
 		</div>

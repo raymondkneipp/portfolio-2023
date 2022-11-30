@@ -6,42 +6,25 @@ image: /images/alpost/homepage.png
 ---
 
 import GridCard from '../../components/GridCard.astro';
+import Button from '../../components/Button.astro';
 import { Image } from '@astrojs/image/components';
 
-<GridCard>
+<GridCard spacing={true}>
 
 # Alpost
 
-ALPost is a webiste builder for american legion posts. I designed and built this project from scratch.
+ALPost is a webiste builder for american legion posts. I designed and built this project from scratch. Clients can signin with google to get access to the CMS that manages their website. Clients can create news articles, post events, manage their members and applicants, view and respond to messages from visitors, and much more.
 
-## Core Functionalities & Interesting Features
+## Technologies
 
-- Admin Dashboard for clients to manage website and process applications.
-- Custom built CMS for clients to manage website
-- Multitenancy to allow multiple users to site
-- Payment processing using Stripe
-- Handles applications for new members, renewing members, and transfer members
-- Allows users to post news reguarding legion
-- Supports creation of events to list on website
-- Share legion information, social media networks for legion, lists officers, lists FAQs
-- Lists contact methods and offers a form for visitors to easily reach legion
-
-## Technologies Used
-
-- Next Auth
-- React Hook Form
+- React / Next.js
+- TypeScript
+- Tailwind CSS
+- tRPC
 - Prisma
 - Stripe
-- tRPC
-- Next.js
-- React
-- Tailwind CSS
-- TypeScript
-- Vercel
 
-[Live Site](https://alpost.org/)
-
-[Source Code](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[View Site](https://alpost.org)
 
 <Image
 	src="/images/alpost/homepage.png"
@@ -55,7 +38,7 @@ ALPost is a webiste builder for american legion posts. I designed and built this
 
 </GridCard>
 
-<GridCard>
+<GridCard spacing={true}>
 
 ## Purpose and Goal
 
@@ -68,6 +51,22 @@ I opened the link to the local American Legion Post and to no suprise, it looked
 I tried out their demo and was astonished by how unintuitive the experience was. I knew I could create something better. Something more modern and easy to use.
 
 I proceded to spend months learning and building out small demos to confirm that I could build something like this.
+
+</GridCard>
+
+<GridCard spacing={true}>
+
+## Spotlight
+
+- What is the "killer feature" of your project? What feature does it have that took the most work or was the most technically impressive? Some possible examples:
+
+  - User authentication
+  - A feed of items fetched from a database
+  - A particularly tricky UI element (eg. autocomplete, calendar, drag-and-drop)
+  - Anything you are proud of!
+
+- What were the technical hurdles that got in your way? Any major problems you hit during development?
+- How did you solve those problems? What was the solution? Go deep here, and write with a developer in mind.
 
 ### Plan A
 
@@ -85,24 +84,7 @@ Thank goodness for [Vercel's Platform Starter Kit](https://vercel.com/guides/nex
 
 </GridCard>
 
-<GridCard>
-
-## Spotlight
-
-- What is the "killer feature" of your project? What feature does it have that took the most work or was the most technically impressive? Some possible examples:
-  - User authentication
-  - A feed of items fetched from a database
-  - A particularly tricky UI element (eg. autocomplete, calendar, drag-and-drop)
-  - Anything you are proud of!
-
-I created the logo!
-
-- What were the technical hurdles that got in your way? Any major problems you hit during development?
-- How did you solve those problems? What was the solution? Go deep here, and write with a developer in mind.
-
-</GridCard>
-
-<GridCard>
+<GridCard spacing={true}>
 
 ## Lessons Learned
 

@@ -33,7 +33,9 @@ const { projects } = Astro.props;
 					<h3>{project.frontmatter.title}</h3>
 				</header>
 				<p class="line-clamp-2">{project.frontmatter.description}</p>
-				<span class="text-amber-400">View Project</span>
+				<span class="text-amber-400 underline decoration-stone-800 group-focus-visible:decoration-amber-400 group-hover:decoration-amber-400 underline-offset-4 transition">
+					View Project
+				</span>
 			</a>
 		))
 	}
