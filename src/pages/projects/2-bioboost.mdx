@@ -13,7 +13,7 @@ import { Image } from '@astrojs/image/components';
 
 # BioBoost App
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cupiditate quaerat quidem. Tenetur veniam aliquam reprehenderit architecto, porro officiis voluptates vitae nostrum dignissimos ipsam hic pariatur delectus enim fuga sint!
+The purpose of this app is to help you to reenforce positive habits and reduce negative habits, as well as helping you to live a healthy lifestyle. Staying healthy will keep you productive and your good habits will keep you on track to reach your goals. Currently the app offers tracking for good habits and bad habits, weight, and mood.
 
 ## Technologies
 
@@ -43,16 +43,26 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cupiditate quaera
 
 ## Purpose and Goal
 
+I built this project because I wanted a platform that offered both productivity, and health tools. Ultimetaly I wanted an app to help keep people on track of their goals and keep people fit and healthy. To increase the number of days that you feel great. Increase the number of days where you are ectreamly productive and your work feels effortless.
+
+This app is very far from being finished. I have a whole [list of features](https://github.com/raymondkneipp/bioboost-app#roadmap) I would like to add to it. Eventually I would like to be able to record a plethera of different health metrics.
+
+A while ago I built a similar [app using the MERN stack called Routinely](https://github.com/raymondkneipp/Routinely).
+
 </GridCard>
 
 <GridCard spacing={true}>
 
 ## Problems and Thought Process
 
+The trickiest part of the app was creating a calendar that shows users what days they were successful in a given activity. It required using many different array methods such as `some` and `every` to determine wether a task was completed for a given day. I also had to check to see if the task was created before that day or if the day is in the future. Using this information it would determine where the task was completed, was not completed, or no tasks were created yet so no need to display any info for that day.
+
 </GridCard>
 
 <GridCard spacing={true}>
 
 ## Lessons Learned
+
+Before this project I would reach for an npm package called `variant-classnames`. This package would conditinally add class names to your componetns based on props. This removed the need to fill your className attributes with a bunch of ternary operators. For this project I chose `class-variance-authority` or cva. With `variant-classnames`, you would have to create an interface for all your props. CVA offers the `VariantProps` helper to extract variant types so you no longer have to manually write out the types yourself.
 
 </GridCard>
