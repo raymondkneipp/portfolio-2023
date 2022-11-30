@@ -18,8 +18,9 @@ const { projects } = Astro.props;
 				<header class="flex flex-col gap-3">
 					<Image
 						src={project.frontmatter.image}
-						alt="Photo of Raymond Kneipp"
-						width="650px"
+						alt={`${project.frontmatter.title} screenshot`}
+						width={650}
+						height={365}
 						aspectRatio="16:9"
 						fit="contain"
 						layout="fill"
