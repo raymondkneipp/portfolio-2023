@@ -25,11 +25,9 @@ const { projects } = Astro.props;
 						layout="fill"
 						class="w-full"
 					/>
-					<h3 class="font-bold text-xl font-sans">
-						{project.frontmatter.title}
-					</h3>
+					<h3>{project.frontmatter.title}</h3>
 				</header>
-				<p>{project.frontmatter.description}</p>
+				<p class="line-clamp-2">{project.frontmatter.description}</p>
 				<span class="text-amber-400">View Project</span>
 			</a>
 		))

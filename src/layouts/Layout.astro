@@ -39,7 +39,11 @@ import Navbar from '../components/Navbar.astro';
 	}
 
 	h2 {
-		@apply font-bold text-3xl font-sans;
+		@apply font-bold text-xl sm:text-3xl font-sans;
+	}
+
+	h3 {
+		@apply font-bold text-lg sm:text-xl font-sans;
 	}
 
 	h1,
@@ -56,7 +60,7 @@ import Navbar from '../components/Navbar.astro';
 	}
 
 	ul {
-		@apply list-inside list-disc flex gap-3 flex-col;
+		@apply list-inside list-disc flex gap-3 flex-col text-stone-400;
 	}
 
 	a {
