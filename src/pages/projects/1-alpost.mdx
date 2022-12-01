@@ -13,7 +13,7 @@ import { Image } from '@astrojs/image/components';
 
 # Alpost
 
-ALPost is a webiste builder for american legion posts. I designed and built this project from scratch. Clients can signin with google to get access to the CMS that manages their website. Clients can create news articles, post events, manage their members and applicants, view and respond to messages from visitors, and much more.
+Alpost is a website builder for American Legion Posts. I designed and built this project from scratch. Clients can sign in with Google to get access to the CMS that manages their website. Clients can create news articles, post events, manage their members and applicants, view and respond to messages from visitors, and much more.
 
 ## Technologies
 
@@ -42,13 +42,15 @@ ALPost is a webiste builder for american legion posts. I designed and built this
 
 ## Purpose and Goal
 
-After returning home from a deployment, I wanted to start freelancing. I came across a local business directory for the town I grew up in and began reaching out to various buisnesses.
+After returning home from a deployment, I wanted to start freelancing. I came across a local business directory for the town I grew up in and began reaching out to various businesses.
 
-I opened the link to the local American Legion Post and to no suprise, it looked aged. In the footer of the page I found a link to the service they were using to create the webpage. I explored other legion websites and found they were using the same service.
+I checked out the local American Legion site, and the website was outdated. I scrolled to the footer to find any hints regarding the service they were using. Someone had created a template that many other American Legions were using.
 
-I tried out their demo and was astonished by how unintuitive the experience was. I knew I could create something better. Something more modern and easy to use.
+I tested the demo and was astonished by how unintuitive the user experience was. I knew I could build something better. Something that looked modern and was easy to use.
 
-I proceded to spend months learning and building out small demos to confirm that I could build something like this.
+American Legion membership has been on a plunge. Between the years 2017 and 2021, membership declined by almost 200,000. Maybe a newer website will attract a younger audience and reverse this trend.
+
+I spent months learning and building out small demos to confirm that I could build something better.
 
 </GridCard>
 
@@ -56,17 +58,19 @@ I proceded to spend months learning and building out small demos to confirm that
 
 ## Problems and Thought Process
 
-My first though was I could create a template and duplicate the codebase everytime I found a legion that wanted a new website. After building the template I realized that this approach would not be sustainable. I would have to clone the repo, change the copy, setup new environment variables, push the code to a hosting platform, buy a domain, configure the DNS, setup a CMS, etc.
+My first idea was that I could create a template and duplicate the codebase for every Legion that wanted a new website. I realized that this approach would not be sustainable. I would have to clone the template, change the writing, set up a CMS, deploy the codebase to a hosting provider, purchase a domain, configure the DNS, etc. If I wanted to add a new feature or fix a bug, I would have to go in and manually change every codebase.
 
 ### Plan B
 
-I wanted a way to automate everything said above. I opened up my podcast player and saw a podcast labeled ["Potluck - Multi Tenant Apps, JS Sprinkles, Kids Coding, Server Error Handling"](https://syntax.fm/show/448/potluck-multi-tenant-apps-js-sprinkles-kids-coding-server-error-handling) by Syntax. I imedietly knew that this is what I needed.
+I wanted a way to automate these tasks and have a single codebase to update. Unfortunately, I had no idea how to do this. I queried Google for days trying to find the phrase that would help me in my quest. Then one day, I opened my podcast player and saw a podcast labeled ["Potluck - Multi Tenant Apps, JS Sprinkles, Kids Coding, Server Error Handling"](https://syntax.fm/show/448/potluck-multi-tenant-apps-js-sprinkles-kids-coding-server-error-handling) by Syntax. "Multi Tenant Apps" was the answer.
 
-I began working on a [repo to showcase basic multi-tenant architecture](https://github.com/raymondkneipp/multi-tenant-via-subdomain) and hosted it on a digital ocean droplet. I installed caddy server to handle SSL certs and handle wildcard domains. At the time, I was using only react so all the pages were rendered on the client and that was going to be no good for performance and SEO.
+I began working on a [repo to practice basic multi-tenant architecture](https://github.com/raymondkneipp/multi-tenant-via-subdomain) and hosted it on a digital ocean droplet. I installed Caddy server to manage SSL certs and handle wildcard domains. I was using CSR, which would result in poor performance and SEO. Trying to set up SSR was going to be a nightmare.
 
 ### Plan C
 
-Thank goodness for [Vercel's Platform Starter Kit](https://vercel.com/guides/nextjs-multi-tenant-application). The only problem was I have never used Prisma, PlanetScale, or NextAuth.js, and the codebase was honestly intimidating. Rather than forking the repo and conforming it for my needs and just relying on the magic to make it work, I wanted to figure out what made it worked. I went through every file and figured out what everything was responsible for and took the code I needed and used it in my project.
+Thank goodness for [Vercel's Platform Starter Kit](https://vercel.com/guides/nextjs-multi-tenant-application). Using Next.js for this app would provide significantly better performance and SEO, which is crucial for the kind of website I was making. The only problem was I have never used Prisma, PlanetScale, or NextAuth.js, and the codebase was honestly intimidating.
+
+Rather than cloning the repository to conform it to my needs and just relying on the magic to make it work, I wanted to figure out the magic that made it work. I went through every file to figure out what everything was responsible for and took the code I needed to use in my project.
 
 </GridCard>
 
@@ -74,12 +78,12 @@ Thank goodness for [Vercel's Platform Starter Kit](https://vercel.com/guides/nex
 
 ## Lessons Learned
 
-Plan A never works. I did learn a bit about Next.js middleware. This is the crucial piece of code that lets this app work. Using middleware I am able to rewrite the url based on the domain to route to a specific website.
+Plan A rarely works. I did learn quite a bit about Next.js middleware which is the critical piece of code that lets this app work. With middleware, I can rewrite the URL based on the domain to route to a specific prebuilt template.
 
-As I was building this app I stumbled upon the [t3 stack](https://create.t3.gg) and I used it to build out the admin dashboard and CMS. I've never had a more satisfiing developer experience.
+I stumbled upon the [t3 stack](https://create.t3.gg) and used it to create the admin dashboard and CMS. I've never had a more satisfying developer experience as it added type safety between my server logic and front end.
 
-According to the US Department of Veterans Affairs, about 130,428 US veterans are legally blind, and around one million veterans have low vision. Although I am not an accessibility expert, I did do my dudiligence to be as accomidating as possible. I incorporated a light and dark theme to accomidate users with low vision and light sensitivity and used proper contrast. I utilized HeadlessUI to create keyboard accessible navigation menus.
+According to the US Department of Veterans Affairs, about 130,428 US veterans are legally blind, and around one million have low vision. I incorporated a light and dark theme to accommodate users with low vision and light sensitivity and checked for proper color contrast. I utilized HeadlessUI to create keyboard-accessible navigation menus.
 
-Working on ALPost has taught me the concept of multitenantcy. I have future plans to use this technique in future projects.
+Working on ALPost has taught me a lot, including multitenancy. I have plans to use this concept in future projects.
 
 </GridCard>
