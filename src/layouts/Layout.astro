@@ -1,9 +1,10 @@
 ---
 export interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 import '@fontsource/jost';
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
@@ -17,6 +18,7 @@ import Navbar from '../components/Navbar.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
 	<body>

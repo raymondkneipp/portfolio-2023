@@ -21,7 +21,10 @@ const next = index + 1 > filteredProjects.length - 1 ? 0 : index + 1;
 const otherProjects = [filteredProjects[next], filteredProjects[prev]];
 ---
 
-<Layout title={`Project: ${content.title} by Raymond Kneipp`}>
+<Layout
+	title={`Project: ${content.title} by Raymond Kneipp`}
+	description={content.description}
+>
 	<slot />
 	<GridCard padding={false}>
 		<h2 class="p-3 sm:p-6 md:p-12">Other Projects</h2>
