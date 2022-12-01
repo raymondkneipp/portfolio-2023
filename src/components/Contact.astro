@@ -1,4 +1,5 @@
 ---
+import Icon from 'astro-icon';
 import GridCard from './GridCard.astro';
 ---
 
@@ -40,14 +41,52 @@ import GridCard from './GridCard.astro';
 				>
 				</div>
 			</div>
+		</div>
 
-			<div class="flex flex-col gap-1">
-				<h3 class="font-bold text-sm">Raymond Kneipp</h3>
-				<p class="max-w-screen-md w-fit p-3 bg-stone-800 mr-6">
-					Thank you for reaching out. I will be getting back to you as soon as I
-					can!
-				</p>
+		<div class="flex flex-col gap-1">
+			<h3 class="font-bold text-sm">Raymond Kneipp</h3>
+			<p class="max-w-screen-md w-fit p-3 bg-stone-800 mr-6">
+				Thank you for reaching out. I will be getting back to you as soon as I
+				can!
+			</p>
+		</div>
+
+		<div class="flex items-end gap-3 sm:gap-6">
+			<div class="flex flex-col gap-1 flex-1">
+				<label for="email" class="font-bold text-sm">Your Email</label>
+				<input
+					id="email"
+					type="email"
+					class="bg-transparent border border-stone-800 focus:outline-none focus-visible:border-amber-400 p-2"
+				/>
 			</div>
+
+			<button
+				class="bg-amber-400 h-[42px] flex items-center justify-center w-[42px] text-stone-900 hover:bg-amber-300 transition"
+				aria-label="Next"
+				type="button"
+			>
+				<Icon name="mdi:arrow-right-thick" class="h-6 w-6" />
+			</button>
+		</div>
+
+		<div class="flex items-end gap-3 sm:gap-6">
+			<div class="flex flex-col gap-1 flex-1">
+				<label for="message" class="font-bold text-sm">Your Message</label>
+				<textarea
+					id="message"
+					rows="1"
+					class="bg-transparent border border-stone-800 focus:outline-none focus-visible:border-amber-400 p-2"
+				></textarea>
+			</div>
+
+			<button
+				class="bg-amber-400 h-[42px] flex items-center justify-center w-[42px] text-stone-900 hover:bg-amber-300 transition"
+				aria-label="Next"
+				type="submit"
+			>
+				<Icon name="mdi:send" class="h-6 w-6" />
+			</button>
 		</div>
 	</div>
 </GridCard>
