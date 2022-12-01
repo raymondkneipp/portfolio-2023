@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Project.astro
 title: Al's Sweeper
-description: I created an eCommerce website for a local vacuum and sewing machine company. I decreased loading times by incorporating static site generation to serve products immediately.
+description: eCommerce website built for a local vacuum and sewing machine company.
 image: /images/main-alssweeper.png
 ---
 
@@ -13,13 +13,13 @@ import { Image } from '@astrojs/image/components';
 
 # Al's Sweeper & Sewing Center
 
-Al's Sweeper is an eCommerce webiste built with React. The website shares information about the business, the services they provide, a contact form to easaly reach the company, a catalog where visitors can shop for vaccuums and vacuum parts, and a shopping cart handled with Redux.
+Al's Sweeper is an eCommerce website built with React. The website shares information about the business, services they provide, a contact form to easily reach the company, a catalog where visitors can shop for vacuums and vacuum parts, and a shopping cart handled with Redux.
 
 ## Technologies
 
 - React / Next.js
 - Tailwind CSS
-- Redux Tookit
+- Redux Toolkit
 - Commerce.js
 - SendGrid
 
@@ -43,9 +43,9 @@ Al's Sweeper is an eCommerce webiste built with React. The website shares inform
 
 ## Purpose and Goal
 
-I reached out to Al's Sweeper & Sewing Center becuase they did not have a website. I offered them my services and they happily accepted. I created a [PDF presentation](<../../public/Al's Sweeper & Sewing Shop.pdf>) about the design choince I made, six differnet logo options, business card mockups, avaliable domains, a homepage mockup, and a visual site map to explain the different pages and flow of the webiste.
+I reached out to Al's Sweeper & Sewing Center because they did not have a website. I offered them my services, and they happily accepted. I created a [PDF presenting my design choices, six different logo options, business card mockups, available domains, a homepage mockup, and a visual site map](</Al's Sweeper & Sewing Shop.pdf>) to explain the pages and flow of the website.
 
-I wanted to create a website where visitors could easily reach the company and they could purchase producst online rather than requiring the visiotr to be somewhat local and in the area to pick up an item.
+I wanted to create a website where visitors could easily reach the company and purchase products online rather than requiring the visitor to be in the area to pick up an item.
 
 </GridCard>
 
@@ -53,7 +53,9 @@ I wanted to create a website where visitors could easily reach the company and t
 
 ## Problems
 
-A problem I ran into was that every time you were to browse the catalog or view a priduct, it would take a few seconds to load. I was fetching the data each request which resulted in a poor user experiecne. the latest iteration I incorporated Incremental Static Regeneration. This made the shoppong experience quick and snappy. Rather than fethcing all the producst every requert, I cached the data and and revalidated it every so often.
+A problem I ran into when building this website was when a visitor would view the catalog or a product. It would take several seconds for the data to populate the page.
+
+Every page request would fetch a product or list of products and then display them to the user. Retrieving the data on every request was slow and resulted in a poor user experience. To fix this issue, I incorporated incremental static regeneration making the shopping experience quick and snappy. By caching the data for a set period, product pages would be instantly ready for the user.
 
 </GridCard>
 
@@ -61,8 +63,8 @@ A problem I ran into was that every time you were to browse the catalog or view 
 
 ## Lessons Learned
 
-This was my first time creating an eCommerce platform so it was my first time using Commerce.js. I watched plenty of YouTube videos going over commerce.js and read through their documentation so i could smoothly implement it into the webiste. eCommerce was very intimidating at the time but the library made it so easy to get up and running.
+This project was my first experience with eCommerce applications. At this time, eCommerce was very intimidating. I chose Commerce.js because it allowed me to add online shopping capabilities easily. I read through the documentation and created a demo store. This practice led to a smooth integration into the website.
 
-This project was my first experience using Incremental Static Regeneration and I have used this technique in other projects to serve data to the visitor quickly.
+This project was my first time utilizing caching to speed up page requests. I have incorporated caching into other projects after I learned how simple it is to set up with Next.js.
 
 </GridCard>
