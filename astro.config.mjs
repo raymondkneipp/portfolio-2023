@@ -1,17 +1,19 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-import tailwind from '@astrojs/tailwind';
-
-// https://astro.build/config
 import image from '@astrojs/image';
-
-// https://astro.build/config
-import mdx from "@astrojs/mdx";
+import mdx from '@astrojs/mdx';
+import tailwind from '@astrojs/tailwind';
+import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), image({
-    serviceEntryPoint: '@astrojs/image/sharp'
-  }), mdx()]
+	site: 'https://raymondkneippbeta.vercel.app/',
+	integrations: [
+		robotsTxt(),
+		tailwind(),
+		image({
+			serviceEntryPoint: '@astrojs/image/sharp',
+		}),
+		mdx(),
+	],
 });
