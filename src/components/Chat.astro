@@ -1,0 +1,25 @@
+---
+export interface Props {
+	name?: string;
+	guest?: boolean;
+}
+
+const { name, guest = false } = Astro.props;
+---
+
+<div
+	class={`flex flex-col gap-1 max-w-screen-md ${
+		guest ? 'items-end ml-auto' : ''
+	}`}
+>
+	{name && <h3 class="font-bold text-sm">{name}</h3>}
+	<p
+		class={`p-3 w-fit ${
+			guest
+				? 'bg-amber-400 text-stone-900 ml-6'
+				: 'bg-stone-800 text-stone-300 mr-6'
+		}`}
+	>
+		<slot />
+	</p>
+</div>
