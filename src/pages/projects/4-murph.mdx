@@ -13,7 +13,7 @@ import { Image } from '@astrojs/image/components';
 
 # Murph Workout App
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cupiditate quaerat quidem. Tenetur veniam aliquam reprehenderit architecto, porro officiis voluptates vitae nostrum dignissimos ipsam hic pariatur delectus enim fuga sint!
+The Murph Workout consists of a one-mile run, one hundred pull-ups, two hundred push-ups, three hundred squats, and another one-mile run. This app guides you through the workout, and you can signup with Google to save your workout times and compete in the monthly leaderboard.
 
 ## Technologies
 
@@ -23,15 +23,15 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cupiditate quaera
 - Next Auth
 - tRPC
 
-[View Site](https://app.bioboost.fit/)
+[View Site](https://murph.bioboost.fit/)
 
-[Source Code](https://github.com/raymondkneipp/bioboost-app)
+[Source Code](https://github.com/raymondkneipp/murph)
 
 <Image
-	src="/images/full-bioboost.png"
-	alt="Screenshot of bioboost app"
+	src="/images/full-murph.png"
+	alt="Screenshot of Murph Workout app"
 	width={1920}
-	height={1124}
+	height={932}
 	fit="cover"
 	position="top"
 	class="w-full bg-stone-800"
@@ -43,16 +43,22 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cupiditate quaera
 
 ## Purpose and Goal
 
+I created this project because the Murph workout is one of my favorites. I find this workout very challenging and rewarding. I wanted an easier way to record my completion times and keep track of the number of repetitions I have completed. Previously I would open my notes app and write down all the exercises and the number of repetitions I have performed.
+
 </GridCard>
 
 <GridCard spacing={true}>
 
-## Problems and Thought Process
+## Problems
+
+I did not run into any significant problems developing this site. I had created this [project before using the MERN stack](https://github.com/raymondkneipp/Murph-MERN), so I had a good idea of how it worked.
 
 </GridCard>
 
 <GridCard spacing={true}>
 
 ## Lessons Learned
+
+Probably the most fun part of working on this app was the timer. I used a library called `luxon` to handle the starting and ending times for the three events. The timer UI utilized `setInterval` and a `useEffect` to update the time shown to the user.
 
 </GridCard>
