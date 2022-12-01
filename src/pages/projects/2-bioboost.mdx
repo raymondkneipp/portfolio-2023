@@ -13,7 +13,7 @@ import { Image } from '@astrojs/image/components';
 
 # BioBoost App
 
-The purpose of this app is to help you to reenforce positive habits and reduce negative habits, as well as helping you to live a healthy lifestyle. Staying healthy will keep you productive and your good habits will keep you on track to reach your goals. Currently the app offers tracking for good habits and bad habits, weight, and mood.
+BioBoost is a react application focused on health and productivity that helps users reinforce positive behaviors and mitigates negative behaviors. Habit tracking allows you to reach your goals, whether they are health or career-related. Staying on top of your health will result in better perspectives and a more productive lifestyle. Currently, the app supports good and bad habits, weight, and mood tracking.
 
 ## Technologies
 
@@ -43,11 +43,7 @@ The purpose of this app is to help you to reenforce positive habits and reduce n
 
 ## Purpose and Goal
 
-I built this project because I wanted a platform that offered both productivity, and health tools. Ultimetaly I wanted an app to help keep people on track of their goals and keep people fit and healthy. To increase the number of days that you feel great. Increase the number of days where you are ectreamly productive and your work feels effortless.
-
-This app is very far from being finished. I have a whole [list of features](https://github.com/raymondkneipp/bioboost-app#roadmap) I would like to add to it. Eventually I would like to be able to record a plethera of different health metrics.
-
-A while ago I built a similar [app using the MERN stack called Routinely](https://github.com/raymondkneipp/Routinely).
+I built this app because I wanted an all-in-one health and productivity tool. I wanted something to help me with my fitness and life goals. I am working on plenty of [other features](https://github.com/raymondkneipp/bioboost-app#roadmap) to assist anyone wanting to be happier and healthier.
 
 </GridCard>
 
@@ -55,7 +51,7 @@ A while ago I built a similar [app using the MERN stack called Routinely](https:
 
 ## Problems and Thought Process
 
-The trickiest part of the app was creating a calendar that shows users what days they were successful in a given activity. It required using many different array methods such as `some` and `every` to determine wether a task was completed for a given day. I also had to check to see if the task was created before that day or if the day is in the future. Using this information it would determine where the task was completed, was not completed, or no tasks were created yet so no need to display any info for that day.
+The trickiest part of the app was creating the calendar that shows users what days they were successful in a given activity. If you complete all your daily tasks, you receive a green check. If you fail to perform merely one habit, then you receive a red indicator. But, if you didn't have a task created on or before that day, it would omit that habit. This logic required using many different array methods, such as `some` and `every`. This logic had to be duplicated and changed for every recorded metric.
 
 </GridCard>
 
@@ -63,6 +59,53 @@ The trickiest part of the app was creating a calendar that shows users what days
 
 ## Lessons Learned
 
-Before this project I would reach for an npm package called `variant-classnames`. This package would conditinally add class names to your componetns based on props. This removed the need to fill your className attributes with a bunch of ternary operators. For this project I chose `class-variance-authority` or cva. With `variant-classnames`, you would have to create an interface for all your props. CVA offers the `VariantProps` helper to extract variant types so you no longer have to manually write out the types yourself.
+Before this project, I would reach for an npm package called `variant-classnames`.
+
+This package would conditionally add class names to your components based on props.
+
+```jsx
+import cn from 'variant-classnames';
+
+type ButtonProps = {
+	text: string,
+	color: 'red' | 'blue',
+};
+
+export const Button: React.FC<ButtonProps> = (props) => {
+	const variants = {
+		color: {
+			red: 'bg-red-100 text-red',
+			blue: 'bg-blue-100 text-blue',
+		},
+	};
+
+	const classes = cn(variants, props);
+
+	return <button className={classes}>{props.text}</button>;
+};
+```
+
+This utility removes the need to fill your className attributes with many ternary operators and makes the code more managable.
+
+```jsx
+type ButtonProps = {
+	text: string,
+	color: 'red' | 'blue',
+};
+
+export const Button: React.FC<ButtonProps> = (props) => {
+	return (
+		<button
+			className={`${props.color === 'red' ? 'bg-red-100 text-red' : ''} ${
+				props.color === 'blue' ? 'bg-blue-100 text-blue' : ''
+			}`}
+		>
+			{props.text}
+		</button>
+	);
+};
+```
+
+For this project, I chose `class-variance-authority` or cva. With `variant-classnames` you would have to create an interface for all your props. CVA offers the `VariantProps` helper to extract variant types, so you don't have to code the interface manually.
 
 </GridCard>
