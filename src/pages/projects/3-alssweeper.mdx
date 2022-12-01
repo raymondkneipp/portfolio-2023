@@ -11,15 +11,15 @@ import { Image } from '@astrojs/image/components';
 
 <GridCard spacing={true}>
 
-# Al's Sweepers
+# Al's Sweeper & Sewing Center
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cupiditate quaerat quidem. Tenetur veniam aliquam reprehenderit architecto, porro officiis voluptates vitae nostrum dignissimos ipsam hic pariatur delectus enim fuga sint!
+Al's Sweeper is an eCommerce webiste built with React. The website shares information about the business, the services they provide, a contact form to easaly reach the company, a catalog where visitors can shop for vaccuums and vacuum parts, and a shopping cart handled with Redux.
 
 ## Technologies
 
 - React / Next.js
 - Tailwind CSS
-- Redux Tookkit
+- Redux Tookit
 - Commerce.js
 - SendGrid
 
@@ -43,16 +43,26 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cupiditate quaera
 
 ## Purpose and Goal
 
+I reached out to Al's Sweeper & Sewing Center becuase they did not have a website. I offered them my services and they happily accepted. I created a [PDF presentation](<../../public/Al's Sweeper & Sewing Shop.pdf>) about the design choince I made, six differnet logo options, business card mockups, avaliable domains, a homepage mockup, and a visual site map to explain the different pages and flow of the webiste.
+
+I wanted to create a website where visitors could easily reach the company and they could purchase producst online rather than requiring the visiotr to be somewhat local and in the area to pick up an item.
+
 </GridCard>
 
 <GridCard spacing={true}>
 
-## Problems and Thought Process
+## Problems
+
+A problem I ran into was that every time you were to browse the catalog or view a priduct, it would take a few seconds to load. I was fetching the data each request which resulted in a poor user experiecne. the latest iteration I incorporated Incremental Static Regeneration. This made the shoppong experience quick and snappy. Rather than fethcing all the producst every requert, I cached the data and and revalidated it every so often.
 
 </GridCard>
 
 <GridCard spacing={true}>
 
 ## Lessons Learned
+
+This was my first time creating an eCommerce platform so it was my first time using Commerce.js. I watched plenty of YouTube videos going over commerce.js and read through their documentation so i could smoothly implement it into the webiste. eCommerce was very intimidating at the time but the library made it so easy to get up and running.
+
+This project was my first experience using Incremental Static Regeneration and I have used this technique in other projects to serve data to the visitor quickly.
 
 </GridCard>
