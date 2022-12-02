@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/raymondkneipp/portfolio-2023">
-    <img src="public/logo.svg" alt="Logo" width="80" height="80">
+    <img src="public/logo-outline.svg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Portfolio 2023</h3>
