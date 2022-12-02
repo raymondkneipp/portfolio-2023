@@ -1,79 +1,12 @@
 ---
-import Icon from 'astro-icon';
-import Chat from './Chat.astro';
+import Chat from './Chat';
 import GridCard from './GridCard.astro';
-import Typing from './Typing.astro';
 ---
 
 <GridCard id="contact-me">
 	<div class="flex flex-col gap-6">
 		<h2>Contact Me</h2>
 
-		<div class="flex flex-col gap-3">
-			<Chat name="Raymond Kneipp">
-				Feel free to reach out if you're looking for a developer, have a
-				question, or just want to chat.
-			</Chat>
-
-			<Chat>What is your email?</Chat>
-
-			<Chat name="Guest" guest>guestemail@gmail.com</Chat>
-
-			<Chat name="Raymond Kneipp">What is your message?</Chat>
-
-			<Chat name="Guest" guest
-				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eos
-				vitae similique iusto. Iste nostrum quidem nisi reiciendis dignissimos,
-				quo aspernatur blanditiis itaque. Deleniti commodi aliquid fugiat ut
-				ullam pariatur.</Chat
-			>
-
-			<Chat name="Raymond Kneipp">
-				<Typing />
-			</Chat>
-
-			<Chat name="Raymond Kneipp"
-				>Thank you for reaching out! I will be getting back to you as soon as I
-				can!</Chat
-			>
-
-			<div class="flex items-end gap-3 sm:gap-6">
-				<div class="flex flex-col gap-1 flex-1">
-					<label for="email" class="font-bold text-sm">Your Email</label>
-					<input
-						id="email"
-						type="email"
-						class="bg-transparent border border-stone-800 focus:outline-none focus-visible:border-amber-400 p-2 rounded-none"
-					/>
-				</div>
-
-				<button
-					class="bg-amber-400 h-[42px] flex items-center justify-center w-[42px] text-stone-900 hover:bg-amber-300 transition"
-					aria-label="Next"
-					type="button"
-				>
-					<Icon name="mdi:arrow-right-thick" class="h-6 w-6" />
-				</button>
-			</div>
-
-			<div class="flex items-end gap-3 sm:gap-6">
-				<div class="flex flex-col gap-1 flex-1">
-					<label for="message" class="font-bold text-sm">Your Message</label>
-					<textarea
-						id="message"
-						rows="1"
-						class="bg-transparent border border-stone-800 focus:outline-none focus-visible:border-amber-400 p-2 rounded-none"
-					></textarea>
-				</div>
-
-				<button
-					class="bg-amber-400 h-[42px] flex items-center justify-center w-[42px] text-stone-900 hover:bg-amber-300 transition"
-					aria-label="Next"
-					type="submit"
-				>
-					<Icon name="mdi:send" class="h-6 w-6" />
-				</button>
-			</div>
-		</div>
+		<Chat client:visible />
 	</div>
 </GridCard>
