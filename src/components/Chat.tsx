@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { useState } from 'react';
 import ChatBubble from './ChatBubble';
@@ -79,10 +80,17 @@ export default function Chat({}) {
 						e.preventDefault();
 						setStage('sent');
 
-						// send email to myself
-						console.log({ email, message });
-
 						setTyping(true);
+
+						emailjs
+							.send(
+								import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
+								import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
+								{ email, message },
+								import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY
+							)
+							.then((res) => console.log(res.text))
+							.catch((err) => console.log(err.text));
 
 						setTimeout(() => {
 							setTyping(false);
